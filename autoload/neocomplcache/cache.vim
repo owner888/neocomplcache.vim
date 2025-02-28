@@ -334,6 +334,9 @@ function! s:async_load(argv, cache_dir, filename) "{{{
   return neocomplcache#cache#encode_name(a:cache_dir, a:filename)
 endfunction"}}}
 
+" 新版要放到后面才会生效
+let s:Cache = vital#of('neocomplcache').import('System.Cache')
+
 let &cpo = s:save_cpo
 unlet s:save_cpo
 

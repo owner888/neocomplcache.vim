@@ -30,6 +30,7 @@ set cpo&vim
 let s:V = vital#of('neocomplcache')
 let s:List = vital#of('neocomplcache').import('Data.List')
 let s:String = vital#of('neocomplcache').import('Data.String')
+" call Log("s:V = " . string(s:V))
 
 function! neocomplcache#util#truncate_smart(...) "{{{
   return call(s:V.truncate_skipping, a:000)
@@ -228,6 +229,12 @@ endfunction"}}}
 function! neocomplcache#util#convert2list(expr) "{{{
   return type(a:expr) ==# type([]) ? a:expr : [a:expr]
 endfunction"}}}
+
+" 新版要放到后面才会生效
+let s:V = vital#of('neocomplcache')
+let s:List = vital#of('neocomplcache').import('Data.List')
+let s:String = vital#of('neocomplcache').import('Data.String')
+" call Log("s:V = " . string(s:V))
 
 let &cpo = s:save_cpo
 unlet s:save_cpo

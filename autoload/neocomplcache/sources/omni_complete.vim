@@ -297,6 +297,9 @@ function! s:get_candidates(complete_results, complete_pos, complete_str) "{{{
   return candidates
 endfunction"}}}
 
+" 新版要放到后面才会生效
+let s:List = vital#of('neocomplcache').import('Data.List')
+
 let &cpo = s:save_cpo
 unlet s:save_cpo
 
